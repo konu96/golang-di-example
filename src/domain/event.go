@@ -3,7 +3,7 @@ package domain
 import "fmt"
 
 type Event struct {
-	Greeter Greeter // <- adding a Greeter field
+	Greeter GreeterInterface // <- adding a Greeter field
 }
 
 func (e Event) Start() {
@@ -11,6 +11,6 @@ func (e Event) Start() {
 	fmt.Println(msg)
 }
 
-func NewEvent(g Greeter) Event {
+func NewEvent(g GreeterInterface) Event {
 	return Event{Greeter: g}
 }
