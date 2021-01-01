@@ -15,3 +15,9 @@ func (g Greeter) Greet() Message {
 func NewGreeter(m Message) GreeterInterface {
 	return Greeter{Message: m}
 }
+
+func NewMockGreeter() GreeterInterface {
+	return Greeter{
+		Message: "Hi Test",
+	}
+}

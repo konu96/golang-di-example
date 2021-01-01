@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go.uber.org/dig"
 	"golang-di-example/src/domain"
+	"golang-di-example/src/wire"
 )
 
 func main() {
@@ -17,6 +18,6 @@ func main() {
 		fmt.Println(event.Start())
 	})
 
-	event := InitializeEvent()
+	event := wire.InitializeEvent()
 	fmt.Println(event.Start())
 }
