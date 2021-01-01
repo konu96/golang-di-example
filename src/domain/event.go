@@ -1,14 +1,12 @@
 package domain
 
-import "fmt"
-
 type Event struct {
 	Greeter GreeterInterface // <- adding a Greeter field
 }
 
-func (e Event) Start() {
+func (e Event) Start() string {
 	msg := e.Greeter.Greet()
-	fmt.Println(msg)
+	return string(msg)
 }
 
 func NewEvent(g GreeterInterface) Event {

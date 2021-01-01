@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"go.uber.org/dig"
 	"golang-di-example/src/domain"
 )
@@ -13,9 +14,9 @@ func main() {
 	container.Provide(domain.NewEvent)
 
 	container.Invoke(func(event domain.Event) {
-		event.Start()
+		fmt.Println(event.Start())
 	})
 
 	event := InitializeEvent()
-	event.Start()
+	fmt.Println(event.Start())
 }
